@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">crypto_project</string>
+
+    <!-- NAVIGATION MENU -->
+    <string name="navigation_profile">Perfil</string>
+    <string name="navigation_settings">Ajustes</string>
+    <string name="navigation_cryptos">Cryptos</string>
+    <string name="navigation_wallet">Cartera</string>
 </resources>

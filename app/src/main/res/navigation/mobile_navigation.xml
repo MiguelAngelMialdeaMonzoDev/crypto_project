@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_general_crypto">
+
+    <fragment
+        android:id="@+id/navigation_general_crypto"
+        android:name="com.example.crypto_project.modules.main.cryptos.CryptosFragment"
+        android:label="@string/navigation_cryptos"
+        tools:layout="@layout/fragment_cryptos" />
+
+    <fragment
+        android:id="@+id/navigation_wallet"
+        android:name="com.example.crypto_project.modules.main.wallet.WalletFragment"
+        android:label="@string/navigation_wallet"
+        tools:layout="@layout/fragment_wallet" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.crypto_project.modules.main.profile.ProfileFragment"
+        android:label="@string/navigation_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.crypto_project.modules.main.settings.SettingsFragment"
+        android:label="@string/navigation_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
