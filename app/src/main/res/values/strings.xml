@@ -6,4 +6,12 @@
     <string name="navigation_settings">Ajustes</string>
     <string name="navigation_cryptos">Cryptos</string>
     <string name="navigation_wallet">Cartera</string>
+
+    <!-- ITEM COINS -->
+    <string name="crypto_percent">%1$s, %2$s</string>
+
+    <!-- TEXT PERCENTAGE FORMAT -->
+    <string name="percentage_negative">-,%1$s,%</string>
+    <string name="percentage_positive">+,%1$s,%</string>
+    <string name="percentage_neutral">%1$s,%</string>
 </resources>

@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.crypto_project"
-        minSdk 21
+        minSdk 23
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -22,11 +22,13 @@ android {
             minifyEnabled false
             debuggable = false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "API_URL", '""'
+            buildConfigField "String", "API_URL", '"https://api.coingecko.com/api/v3/"'
+            buildConfigField "String", "API_URL_IMAGE", '"https://cryptoicon-api.vercel.app/api/"'
         }
         debug {
             debuggable = true
-            buildConfigField "String", "API_URL", '""'
+            buildConfigField "String", "API_URL", '"https://api.coingecko.com/api/v3/"'
+            buildConfigField "String", "API_URL_IMAGE", '"https://cryptoicon-api.vercel.app/api/"'
         }
     }
     compileOptions {
@@ -64,4 +66,7 @@ dependencies {
     // Navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+
+    // Image
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
 }

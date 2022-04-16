@@ -102,4 +102,5 @@ class RetrofitClient {
     }
 
     suspend fun postLogin(login: Login) = clientWithoutAuth.postLogin(login)
+    suspend fun getAllCryptos() = clientWithoutAuth.getAllCryptos()
 }

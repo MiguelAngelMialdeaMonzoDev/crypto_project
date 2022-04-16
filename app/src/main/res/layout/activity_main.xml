@@ -7,11 +7,11 @@
 
         <variable
             name="activity"
-            type="com.example.crypto_project.modules.main.home.MainActivity" />
+            type="com.example.crypto_project.MainActivity" />
 
         <variable
             name="viewModel"
-            type="com.example.crypto_project.modules.main.home.MainViewModel" />
+            type="com.example.crypto_project.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +22,11 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:background="@color/primary"
+            app:titleMarginStart="40dp"
+            android:elevation="@dimen/cardview_default_elevation"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextColor="@color/white" />
 
         <fragment
             android:id="@+id/fragment_container"
@@ -37,6 +41,9 @@
             android:id="@+id/bottom_nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:labelVisibilityMode="unlabeled"
+            android:elevation="@dimen/cardview_default_elevation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/bottom_nav_menu" />
     </androidx.constraintlayout.widget.ConstraintLayout>
