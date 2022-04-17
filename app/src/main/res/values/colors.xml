@@ -12,4 +12,5 @@
     <color name="blue">#5FB4D3</color>
     <color name="red">#EB392D</color>
     <color name="green">#70EB2D</color>
+    <color name="grey_search_background">#F3F6F9</color>
 </resources>
