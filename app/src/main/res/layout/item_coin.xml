@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@{coin.name}"
-            android:textColor="@color/blue"
+            android:textColor="@color/orange"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@id/image_coin"
             app:layout_constraintTop_toTopOf="parent"

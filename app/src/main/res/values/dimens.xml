@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="general_margin">16dp</dimen>
+    <dimen name="separators">1dp</dimen>
+    <dimen name="margin_top_edits">22dp</dimen>
+</resources>

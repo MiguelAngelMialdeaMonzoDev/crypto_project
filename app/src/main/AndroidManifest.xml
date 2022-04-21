@@ -13,15 +13,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Crypto_project">
         <activity
+            android:name=".modules.signing.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".modules.signing.login.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".modules.signing.SigningActivity"
+            android:exported="true" />
+        <activity
+            android:name=".modules.splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

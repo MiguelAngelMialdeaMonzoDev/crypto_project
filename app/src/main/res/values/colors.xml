@@ -11,6 +11,10 @@
     <color name="primary">#7BB062</color>
     <color name="blue">#5FB4D3</color>
     <color name="red">#EB392D</color>
-    <color name="green">#70EB2D</color>
+    <color name="green">#8AC53F</color>
     <color name="grey_search_background">#F3F6F9</color>
+    <color name="gray_900">#212121</color>
+    <color name="orange">#F48F51</color>
+    <color name="red_google">#DE5246</color>
+    <color name="blue_facebook">#3B5998</color>
 </resources>
