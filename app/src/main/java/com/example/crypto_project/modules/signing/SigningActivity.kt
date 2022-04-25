@@ -16,6 +16,8 @@ class SigningActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Thread.sleep(1000)
+        setTheme(R.style.Theme_Crypto_project)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_signing)
         viewModel = ViewModelProvider(this).get(SigningViewModel::class.java)
 

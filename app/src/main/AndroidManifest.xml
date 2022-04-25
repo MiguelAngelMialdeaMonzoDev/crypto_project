@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Crypto_project">
         <activity
+            android:name=".modules.signing.onboarding.BoardingActivity"
+            android:exported="false" />
+        <activity
             android:name=".modules.signing.register.RegisterActivity"
             android:exported="false" />
         <activity
@@ -27,9 +30,6 @@
         </activity>
         <activity
             android:name=".modules.signing.SigningActivity"
-            android:exported="true" />
-        <activity
-            android:name=".modules.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>

@@ -27,12 +27,26 @@
     </style>
 
     <!-- EDIT DEFAULT -->
-    <style name="edit_default">
-
+    <style name="edit_default" parent="Theme.MaterialComponents.Light">
+        <item name="maxLines">1</item>
+        <item name="android:inputType">text</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <!-- TEXT INPUT DEFAULT -->
-    <style name="input_default">
+    <style name="text_input_default" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/green</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="errorEnabled">true</item>
+    </style>
 
+    <style name="toolbar_default">
+        <item name="titleTextColor">@color/green</item>
+        <item name="navigationIcon">@drawable/ic_arrow_back_24</item>
+        <item name="elevation">@dimen/general_elevation</item>
+        <item name="background">@color/white</item>
     </style>
 </resources>

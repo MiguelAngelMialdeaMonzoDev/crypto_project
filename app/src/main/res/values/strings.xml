@@ -39,4 +39,6 @@
     <!-- REGISTER ACTIVITY -->
     <string name="register_password_error">Introduce una contraseña válida.</string>
     <string name="register_password_confirmation_error">Las contraseñas no coinciden.</string>
+    <string name="login_text_button">Iniciar sesión</string>
+    <string name="register_text_button">Registrarse</string>
 </resources>
