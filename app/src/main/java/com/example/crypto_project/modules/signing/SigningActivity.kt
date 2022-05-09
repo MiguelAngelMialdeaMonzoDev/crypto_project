@@ -21,7 +21,10 @@ class SigningActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_signing)
         viewModel = ViewModelProvider(this).get(SigningViewModel::class.java)
 
+        binding.lifecycleOwner = this
         binding.activity = this
+        binding.viewModel = viewModel
+
     }
 
     fun goToLogin() {

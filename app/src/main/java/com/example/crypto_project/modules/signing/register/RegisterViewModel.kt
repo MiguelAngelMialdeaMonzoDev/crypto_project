@@ -37,7 +37,7 @@ class RegisterViewModel : ViewModel() {
         when {
             password.value.isNullOrEmpty() -> passwordError.value = R.string.empty_field
             password.value.toString().isValidPassword() -> passwordError.value =
-                R.string.register_password_error
+                R.string.password_error
             else -> passwordError.value = 0
         }
     }
