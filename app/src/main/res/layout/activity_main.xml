@@ -20,13 +20,10 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
+            style="@style/toolbar_default"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primary"
-            app:titleMarginStart="40dp"
-            android:elevation="@dimen/cardview_default_elevation"
-            app:layout_constraintTop_toTopOf="parent"
-            app:titleTextColor="@color/white" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <fragment
             android:id="@+id/fragment_container"
@@ -42,8 +39,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            app:labelVisibilityMode="unlabeled"
             android:elevation="@dimen/cardview_default_elevation"
+            app:labelVisibilityMode="unlabeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/bottom_nav_menu" />
     </androidx.constraintlayout.widget.ConstraintLayout>

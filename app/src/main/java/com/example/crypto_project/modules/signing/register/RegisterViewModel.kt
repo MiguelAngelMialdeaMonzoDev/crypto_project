@@ -12,10 +12,12 @@ class RegisterViewModel : ViewModel() {
     val password = MutableLiveData<String>()
     val passwordConfirmation = MutableLiveData<String>()
 
-    val emailError = MutableLiveData(0)
-    val userError = MutableLiveData(0)
-    val passwordError = MutableLiveData(0)
-    val passwordConfirmationError = MutableLiveData(0)
+    val emailError = MutableLiveData<Int>()
+    val userError = MutableLiveData<Int>()
+    val passwordError = MutableLiveData<Int>()
+    val passwordConfirmationError = MutableLiveData<Int>()
+
+    val isRegisterCorrect = MutableLiveData(false)
 
     fun checkEmail() {
         when {
@@ -27,11 +29,14 @@ class RegisterViewModel : ViewModel() {
 
     fun checkUser() {
         when {
-            user.value.isNullOrEmpty() -> userError.value = R.string.empty_field
-            user.value.toString().length < 3 -> userError.value = R.string.user_length
+            user.value.isNullOrEmpty() ->
+                userError.value = R.string.empty_field
+            user.value.toString().length < 3 ->
+                userError.value = R.string.user_length
             else -> userError.value = 0
         }
     }
+
 
     fun checkPassword() {
         when {
@@ -44,9 +49,17 @@ class RegisterViewModel : ViewModel() {
 
     fun checkPasswordConfirmation() {
         when {
-            passwordConfirmation.value.isNullOrEmpty() -> passwordConfirmationError.value = R.string.empty_field
-            passwordConfirmation.value.equals(passwordConfirmation.value) -> passwordConfirmationError.value = R.string.register_password_confirmation_error
-            else -> passwordConfirmationError.value = 0
+            passwordConfirmation.value.isNullOrEmpty() -> passwordConfirmationError.value =
+                R.string.empty_field
+            passwordConfirmation.value.toString() != password.value.toString() ->
+                passwordConfirmationError.value = R.string.register_password_confirmation_error
+            else ->
+                passwordConfirmationError.value = 0
         }
+    }
+
+    fun checkAllFields() {
+        isRegisterCorrect.value =
+            emailError.value == 0 && userError.value == 0 && passwordError.value == 0 && passwordConfirmationError.value == 0
     }
 }

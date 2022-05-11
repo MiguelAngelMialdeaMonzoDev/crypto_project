@@ -29,7 +29,7 @@ class LoginViewModel : ViewModel() {
         }
     }
 
-    fun checkFields() {
+    fun checkAllFields() {
         if (passwordError.value == 0 && emailError.value == 0) {
 
         }

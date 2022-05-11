@@ -10,6 +10,8 @@
     <string name="email_error">Introduce un email válido.</string>
     <string name="user_length">Introduce mínimo 3 carácteres</string>
     <string name="password_error">Introduce una contraseña válida.</string>
+    <string name="accept_positive_button">Aceptar</string>
+    <string name="error">Error</string>
 
     <!-- NAVIGATION MENU -->
     <string name="navigation_profile">Perfil</string>
@@ -36,9 +38,11 @@
     <string name="signing_text_google">Continuar con Google</string>
     <string name="signing_text_facebook">Continuar con Facebook</string>
     <string name="signing_text_terms_and_conditions">Al seleccionar una, usted esta aceptando los <b>Términos y condiciones</b> y <b>Póliticas de Privacidad</b> de esta App <font color="#ED1C24">+18</font></string>
+    <string name="error_login">No existe ningún usuario con estas credenciales.</string>
 
     <!-- REGISTER ACTIVITY -->
     <string name="register_password_confirmation_error">Las contraseñas no coinciden.</string>
     <string name="login_text_button">Iniciar sesión</string>
     <string name="register_text_button">Registrarse</string>
+    <string name="error_creating_user">Se ha producido un error al registrar el usuario.</string>
 </resources>

@@ -14,149 +14,154 @@
             type="com.example.crypto_project.modules.signing.SigningViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/image_logo"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:src="@drawable/image_logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/general_margin"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/image_logo">
+            android:layout_height="match_parent">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_login"
-                onClickWithDebounce="@{() -> activity.goToLogin()}"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/orange"
-                android:paddingVertical="12dp"
-                android:text="@string/signing_login_button"
-                android:textSize="18sp"
-                app:cornerRadius="6dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_register"
-                onClickWithDebounce="@{() -> activity.goToRegister()}"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:paddingVertical="12dp"
-                android:text="@string/signing_register_button"
-                android:textColor="@color/orange"
-                android:textSize="18sp"
-                app:cornerRadius="6dp"
-                app:strokeColor="@color/orange"
-                app:strokeWidth="1dp" />
+            <ImageView
+                android:id="@+id/image_logo"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:src="@drawable/image_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:id="@+id/linear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/general_margin"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/image_logo">
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/separators"
-                    android:layout_weight="1"
-                    android:background="@color/gray_900" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_login"
+                    onClickWithDebounce="@{() -> activity.goToLogin()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/orange"
+                    android:paddingVertical="12dp"
+                    android:text="@string/signing_login_button"
+                    android:textSize="18sp"
+                    app:cornerRadius="6dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_register"
+                    onClickWithDebounce="@{() -> activity.goToRegister()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:paddingVertical="12dp"
+                    android:text="@string/signing_register_button"
+                    android:textColor="@color/orange"
+                    android:textSize="18sp"
+                    app:cornerRadius="6dp"
+                    app:strokeColor="@color/orange"
+                    app:strokeWidth="1dp" />
+
+                <LinearLayout
+                    android:id="@+id/linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/general_margin"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/separators"
+                        android:layout_weight="1"
+                        android:background="@color/gray_900" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/signing_text_lines"
+                        android:textColor="@color/gray_900"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/separators"
+                        android:layout_weight="1"
+                        android:background="@color/gray_900" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/layout_google"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/general_margin"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="@dimen/general_margin">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_login_google"
+                        style="@style/button_google"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="48dp"
+                        android:text="@string/signing_text_google"
+                        app:icon="@drawable/ic_google" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_login_google"
+                        android:layout_width="24dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center"
+                        android:indeterminate="true"
+                        android:indeterminateTint="@color/white"
+                        android:visibility="visible" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/layout_facebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/general_margin"
+                    android:layout_marginBottom="24dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_login_facebook"
+                        style="@style/button_facebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="25dp"
+                        android:text="@string/signing_text_facebook"
+                        app:icon="@drawable/ic_facebook" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_login_facebook"
+                        android:layout_width="24dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center"
+                        android:indeterminate="true"
+                        android:indeterminateTint="@color/white"
+                        android:visibility="visible" />
+                </FrameLayout>
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/text_description_login"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_marginBottom="24dp"
                     android:gravity="center"
-                    android:text="@string/signing_text_lines"
+                    android:text="@string/signing_text_terms_and_conditions"
                     android:textColor="@color/gray_900"
-                    android:textSize="16sp" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/separators"
-                    android:layout_weight="1"
-                    android:background="@color/gray_900" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:layout_editor_absoluteX="0dp" />
             </LinearLayout>
-
-            <FrameLayout
-                android:id="@+id/layout_google"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/general_margin"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="@dimen/general_margin">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button_login_google"
-                    style="@style/button_google"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingStart="50dp"
-                    android:paddingEnd="48dp"
-                    android:text="@string/signing_text_google"
-                    app:icon="@drawable/ic_google" />
-
-                <ProgressBar
-                    android:id="@+id/progress_login_google"
-                    android:layout_width="24dp"
-                    android:layout_height="14dp"
-                    android:layout_gravity="center"
-                    android:indeterminate="true"
-                    android:indeterminateTint="@color/white"
-                    android:visibility="visible" />
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/layout_facebook"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/general_margin"
-                android:layout_marginBottom="24dp">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button_login_facebook"
-                    style="@style/button_facebook"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="50dp"
-                    android:paddingEnd="25dp"
-                    android:text="@string/signing_text_facebook"
-                    app:icon="@drawable/ic_facebook" />
-
-                <ProgressBar
-                    android:id="@+id/progress_login_facebook"
-                    android:layout_width="24dp"
-                    android:layout_height="14dp"
-                    android:layout_gravity="center"
-                    android:indeterminate="true"
-                    android:indeterminateTint="@color/white"
-                    android:visibility="visible" />
-            </FrameLayout>
-
-            <TextView
-                android:id="@+id/text_description_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:gravity="center"
-                android:text="@string/signing_text_terms_and_conditions"
-                android:textColor="@color/gray_900"
-                app:layout_constraintBottom_toBottomOf="parent"
-                tools:layout_editor_absoluteX="0dp" />
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
