@@ -43,6 +43,7 @@
         <item name="errorEnabled">true</item>
     </style>
 
+
     <style name="toolbar_default">
         <item name="titleTextColor">@color/green</item>
         <item name="navigationIcon">@drawable/ic_arrow_back_24</item>

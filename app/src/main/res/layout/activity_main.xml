@@ -5,8 +5,6 @@
 
     <data>
 
-        <import type="android.view.View" />
-
         <variable
             name="activity"
             type="com.example.crypto_project.MainActivity" />
@@ -24,21 +22,11 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:elevation="@dimen/general_elevation"
+            android:background="@color/primary"
+            app:titleMarginStart="40dp"
+            android:elevation="@dimen/cardview_default_elevation"
             app:layout_constraintTop_toTopOf="parent"
-            app:titleTextColor="@color/primary" />
-
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:indeterminateTint="@color/primary"
-            android:visibility="@{viewModel.showLoading?View.VISIBLE:View.GONE}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:titleTextColor="@color/white" />
 
         <fragment
             android:id="@+id/fragment_container"
@@ -54,8 +42,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:elevation="@dimen/cardview_default_elevation"
             app:labelVisibilityMode="unlabeled"
+            android:elevation="@dimen/cardview_default_elevation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/bottom_nav_menu" />
     </androidx.constraintlayout.widget.ConstraintLayout>
