@@ -1,19 +1,15 @@
 package com.example.crypto_project
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.RecyclerView
 import com.example.crypto_project.adapters.CoinsAdapter
-import com.example.crypto_project.data.model.Coin
 import com.example.crypto_project.databinding.ActivityMainBinding
-import com.example.crypto_project.modules.main.crypto_profile.CryptoProfileActivity
 
 class MainActivity : AppCompatActivity() {
 
