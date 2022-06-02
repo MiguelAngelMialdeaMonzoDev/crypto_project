@@ -46,7 +46,12 @@
     <style name="toolbar_default">
         <item name="titleTextColor">@color/green</item>
         <item name="navigationIcon">@drawable/ic_arrow_back_24</item>
-        <item name="elevation">@dimen/general_elevation</item>
-        <item name="background">@color/white</item>
+    </style>
+
+    <!-- TEXT TITLE PROFILE INFO -->
+    <style name="text_title_profile">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

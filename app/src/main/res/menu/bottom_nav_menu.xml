@@ -3,21 +3,21 @@
 
     <item
         android:id="@+id/navigation_general_crypto"
-        android:icon="@drawable/ic_coin_24"
+        android:icon="@drawable/ic_search_24"
         android:title="@string/navigation_cryptos" />
 
     <item
-        android:id="@+id/navigation_wallet"
-        android:icon="@drawable/ic_wallet_24"
-        android:title="@string/navigation_wallet" />
+        android:id="@+id/navigation_best_cryptos"
+        android:icon="@drawable/ic_arrow_up_24"
+        android:title="@string/navigation_best_cryptos" />
 
     <item
-        android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_user_24"
-        android:title="@string/navigation_profile" />
+        android:id="@+id/navigation_worst_cryptos"
+        android:icon="@drawable/ic_arrow_down_24"
+        android:title="@string/navigation_worst_cryptos" />
 
     <item
-        android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_settings_24"
-        android:title="@string/navigation_profile" />
+        android:id="@+id/navigation_exchanges"
+        android:icon="@drawable/ic_coin_24"
+        android:title="@string/navigation_worst_cryptos" />
 </menu>

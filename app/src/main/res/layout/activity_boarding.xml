@@ -8,28 +8,66 @@
         <variable
             name="activity"
             type="com.example.crypto_project.modules.signing.onboarding.BoardingActivity" />
+
+        <variable
+            name="viewModel"
+            type="com.example.crypto_project.modules.signing.onboarding.BoardingViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100"
         tools:context=".modules.signing.onboarding.BoardingActivity">
+
+        <TextView
+            android:id="@+id/text_skip"
+            onClickWithDebounce="@{() -> activity.goToSigning()}"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="4"
+            android:padding="4dp"
+            android:text="Saltar"
+            android:textColor="@color/primary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="84"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <me.relex.circleindicator.CircleIndicator
+        <me.relex.circleindicator.CircleIndicator3
             android:id="@+id/circle_indicator"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="0dp"
             android:layout_marginBottom="@dimen/general_margin"
+            android:layout_weight="4"
             app:ci_drawable="@drawable/ic_circle_onboarding_selected"
             app:ci_drawable_unselected="@drawable/ic_circle_onboarding_unselected"
             app:ci_height="@dimen/page_indicator_boarding_size"
             app:ci_width="@dimen/page_indicator_boarding_size"
             app:layout_constraintBottom_toBottomOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_finish"
+            onClickWithDebounce="@{() -> activity.goToSigning()}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="60dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="8"
+            android:text="Finalizar"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:cornerRadius="12dp" />
+    </LinearLayout>
 </layout>

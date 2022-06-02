@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="exchange"
+            type="com.example.crypto_project.data.model.Exchange" />
+
+        <variable
+            name="clickListener"
+            type="com.example.crypto_project.adapters.ExchangeAdapter.ExchangeClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:paddingHorizontal="16dp">
+
+        <ImageView
+            android:id="@+id/image_exchange"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{exchange.name}"
+            android:textColor="@color/orange"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/image_exchange"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="BNB" />
+
+        <TextView
+            android:id="@+id/text_rating"
+            style="@style/text_title_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            app:drawableEndCompat="@drawable/ic_star_24"
+            app:layout_constraintStart_toEndOf="@id/image_exchange"
+            app:layout_constraintTop_toBottomOf="@id/text_name"
+            tools:text="5/10" />
+
+        <LinearLayout
+            android:id="@+id/linear_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/image_exchange">
+
+            <TextView
+                android:id="@+id/text_year_title"
+                style="@style/text_title_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exchange_year_title" />
+
+            <TextView
+                android:id="@+id/text_year"
+                style="@style/text_title_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                tools:text="2010" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_volume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/linear_year">
+
+            <TextView
+                android:id="@+id/text_volume_title"
+                style="@style/text_title_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exchange_volume_title" />
+
+            <TextView
+                android:id="@+id/text_volume"
+                style="@style/text_title_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                tools:text="480300" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/exchange_url"
+            android:textColor="@color/blue_url"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/linear_volume" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/green"
+            app:layout_constraintTop_toBottomOf="@id/text_url" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

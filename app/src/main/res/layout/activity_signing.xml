@@ -102,6 +102,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_login_google"
                     style="@style/button_google"
+                    onClickWithDebounce="@{() -> activity.loginGoogle()}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"

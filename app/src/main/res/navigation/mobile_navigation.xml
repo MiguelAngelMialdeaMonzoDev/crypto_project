@@ -12,20 +12,20 @@
         tools:layout="@layout/fragment_cryptos" />
 
     <fragment
-        android:id="@+id/navigation_wallet"
-        android:name="com.example.crypto_project.modules.main.wallet.WalletFragment"
-        android:label="@string/navigation_wallet"
-        tools:layout="@layout/fragment_wallet" />
+        android:id="@+id/navigation_best_cryptos"
+        android:name="com.example.crypto_project.modules.main.wallet.BestCryptosFragment"
+        android:label="@string/navigation_best_cryptos"
+        tools:layout="@layout/fragment_best_cryptos" />
 
     <fragment
-        android:id="@+id/navigation_profile"
-        android:name="com.example.crypto_project.modules.main.profile.ProfileFragment"
-        android:label="@string/navigation_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/navigation_worst_cryptos"
+        android:name="com.example.crypto_project.modules.main.profile.WorstCryptosFragment"
+        android:label="@string/navigation_worst_cryptos"
+        tools:layout="@layout/fragment_worst_cryptos" />
 
     <fragment
-        android:id="@+id/navigation_settings"
-        android:name="com.example.crypto_project.modules.main.settings.SettingsFragment"
-        android:label="@string/navigation_settings"
-        tools:layout="@layout/fragment_settings" />
+        android:id="@+id/navigation_exchanges"
+        android:name="com.example.crypto_project.modules.main.settings.ExchangeFragment"
+        android:label="@string/navigation_exchanges"
+        tools:layout="@layout/fragment_exchanges" />
 </navigation>

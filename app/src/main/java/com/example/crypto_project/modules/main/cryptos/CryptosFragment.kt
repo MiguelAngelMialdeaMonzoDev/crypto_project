@@ -12,16 +12,19 @@ import android.widget.SearchView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import com.example.crypto_project.MainActivity
 import com.example.crypto_project.MainViewModel
 import com.example.crypto_project.R
 import com.example.crypto_project.adapters.CoinsAdapter
 import com.example.crypto_project.data.model.Coin
 import com.example.crypto_project.databinding.FragmentCryptosBinding
+import com.example.crypto_project.modules.main.crypto_profile.CryptoProfileActivity
 
 class CryptosFragment : Fragment() {
     private lateinit var binding: FragmentCryptosBinding
     private val parentViewModel by activityViewModels<MainViewModel>()
     private lateinit var coinsAdapter: CoinsAdapter
+    private val parentActivity = MainActivity()
 
     private val responseLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { activityResult ->
@@ -40,11 +43,24 @@ class CryptosFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cryptos, container, false)
 
+        parentViewModel.getCoinsList()
         initAdapter()
         initObservers()
         initSearchView()
         initMicro()
         return binding.root
+    }
+
+    private fun initAdapter() {
+        coinsAdapter = CoinsAdapter(object : CoinsAdapter.CoinCLickListener {
+            override fun onClick(item: Coin) {
+                startActivity(
+                    Intent(requireContext(), CryptoProfileActivity::class.java)
+                        .putExtra("COIN", item))
+            }
+        })
+
+        binding.recyclerCoins.adapter = coinsAdapter
     }
 
     private fun initMicro() {
@@ -80,26 +96,12 @@ class CryptosFragment : Fragment() {
         }
     }
 
-    private fun initAdapter() {
-        parentViewModel.getCoinsList()
-        coinsAdapter = CoinsAdapter(object : CoinsAdapter.CoinCLickListener {
-            override fun onClick(item: Coin) {
-                TODO("Not yet implemented")
-            }
-        })
-        binding.recyclerCoins.adapter = coinsAdapter
-    }
-
-    fun openVoiceDialog() {
+    private fun openVoiceDialog() {
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
         intent.putExtra(
             RecognizerIntent.EXTRA_LANGUAGE_MODEL,
             RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
         )
         responseLauncher.launch(intent)
-    }
-
-    companion object {
-        fun newInstance() = CryptosFragment()
     }
 }

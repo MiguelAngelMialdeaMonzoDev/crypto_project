@@ -46,33 +46,6 @@ class RetrofitClient {
             .build().create(Api::class.java)
     }
 
-    private val clientWithAuth by lazy {
-        Retrofit.Builder().baseUrl(Config.API_URL)
-            .client(
-                OkHttpClient().newBuilder()
-                    .addInterceptor(AccessTokenInterceptor())
-                    .addInterceptor(
-                        LoggingInterceptor.Builder()
-                            .loggable(BuildConfig.DEBUG)
-                            .setLevel(Level.BODY)
-                            .request("Request")
-                            .response("Response")
-                            .addHeader("Content-Type", "application/json").build()
-                    )
-                    .authenticator(AccessTokenAuthenticator())
-                    .build()
-            ).addConverterFactory(GsonConverterFactory.create()).build().create(Api::class.java)
-    }
-
-    fun refreshToken(): Call<Token> {
-        val login = Login()
-
-        login.refresh_token = App.preferences.getRefreshToken()
-        login.grant_type = Config.GRANT_TYPE
-
-        return clientWithoutAuth.refreshToken(login)
-    }
-
     suspend inline fun <T> apiCall(
         crossinline responseFunction: suspend () -> T,
         emitter: RemoteEmitter
@@ -103,4 +76,5 @@ class RetrofitClient {
 
     suspend fun postLogin(login: Login) = clientWithoutAuth.postLogin(login)
     suspend fun getAllCryptos() = clientWithoutAuth.getAllCryptos()
+    suspend fun getAllExchanges() = clientWithoutAuth.getAllExchanges()
 }

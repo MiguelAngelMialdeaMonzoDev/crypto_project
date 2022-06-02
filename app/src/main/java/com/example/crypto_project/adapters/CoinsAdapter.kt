@@ -37,39 +37,43 @@ class CoinsAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-            item: Coin,
+            coin: Coin,
             clickListener: CoinCLickListener
         ) {
-            binding.coin = item
-            binding.textName.text = item.name
+            binding.coin = coin
+            binding.textName.text = coin.name
 
             Glide.with(binding.root.context)
-                .load(item.image.small)
+                .load(coin.image)
                 .encodeQuality(100)
                 .into(binding.imageCoin)
 
-            item.marketData.changePercentage =
-                item.marketData.changePercentage?.toBigDecimal()?.setScale(2, RoundingMode.UP)
+            coin.changePercentage =
+                coin.changePercentage?.toBigDecimal()?.setScale(2, RoundingMode.UP)
                     .toString()
-            item.marketData.currentPrice.dollars =
-                item.marketData.currentPrice.dollars?.toBigDecimal()?.setScale(4, RoundingMode.UP)
+            coin.currentPrice =
+                coin.currentPrice?.toBigDecimal()?.setScale(4, RoundingMode.UP)
                     .toString()
-            binding.textPrice.text = item.marketData.currentPrice.dollars
+            binding.textPrice.text = coin.currentPrice + " $"
             with(binding.root.context) {
                 when {
-                    item.marketData.changePercentage == "0.00" -> {
-                        binding.textPercentage.text = item.marketData.changePercentage+"%"
+                    coin.changePercentage == "0.00" -> {
+                        binding.textPercentage.text = coin.changePercentage+"%"
                         binding.textPercentage.setTextColor(getColor(R.color.black))
                     }
-                    item.marketData.changePercentage.toString().contains("-") -> {
-                        binding.textPercentage.text = item.marketData.changePercentage+"%"
+                    coin.changePercentage.toString().contains("-") -> {
+                        binding.textPercentage.text = coin.changePercentage+"%"
                         binding.textPercentage.setTextColor(getColor(R.color.red))
                     }
                     else -> {
-                        binding.textPercentage.text = "+"+item.marketData.changePercentage+"%"
+                        binding.textPercentage.text = "+"+coin.changePercentage+"%"
                         binding.textPercentage.setTextColor(getColor(R.color.green))
                     }
                 }
+            }
+
+            itemView.setOnClickListener {
+                clickListener.onClick(coin)
             }
         }
     }

@@ -12,10 +12,10 @@
     <string name="password_error">Introduce una contraseña válida.</string>
 
     <!-- NAVIGATION MENU -->
-    <string name="navigation_profile">Perfil</string>
-    <string name="navigation_settings">Ajustes</string>
+    <string name="navigation_worst_cryptos">Peores Cryptos</string>
+    <string name="navigation_exchanges">Exchanges</string>
     <string name="navigation_cryptos">Cryptos</string>
-    <string name="navigation_wallet">Cartera</string>
+    <string name="navigation_best_cryptos">Mejores Cryptos</string>
 
     <!-- ITEM COINS -->
     <string name="crypto_percent">%1$s, %2$s</string>
@@ -41,4 +41,19 @@
     <string name="register_password_confirmation_error">Las contraseñas no coinciden.</string>
     <string name="login_text_button">Iniciar sesión</string>
     <string name="register_text_button">Registrarse</string>
+
+    <!-- EXCHANGE ITEM -->
+    <string name="exchange_created_in">%1s en %1s</string>
+    <string name="exchange_year_title">- Creado en :</string>
+    <string name="exchange_volume_title">- Volúmen de tradeos :</string>
+    <string name="exchange_rating_stars">%1s / 10</string>
+    <string name="exchange_url"><u>Acceder a la plataforma</u></string>
+
+    <!-- BOARDING TEXTS -->
+    <string name="first_title">¡Encuentra tus cryptos!</string>
+    <string name="first_description">Utiliza nuestro buscador ya sea escribiendo o mediante voz</string>
+    <string name="second_title">¡Puedes ver los rankings!</string>
+    <string name="second_description">Descubre las que mejor o peor lo han hecho en las últimas 24h</string>
+    <string name="third_title">¡Descubre donde comprarlas!</string>
+    <string name="third_description">Tendrás una lista de las plataformas donde comprarlas y ver la valoración de los usuarios</string>
 </resources>

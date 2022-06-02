@@ -12,19 +12,23 @@
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/drawable/ic_google.xml" value="0.3165" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/drawable/ic_user_24px.xml" value="0.4185" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/drawable/ic_user_svgrepo_com.xml" value="0.3165" />
-        <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/activity_boarding.xml" value="0.5541666666666667" />
+        <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/activity_boarding.xml" value="0.2" />
+        <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/activity_crypto_profile.xml" value="0.3795986622073579" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/activity_home.xml" value="0.2994791666666667" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/activity_login2.xml" value="0.5541666666666667" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/activity_main.xml" value="0.1933876811594203" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/activity_signing.xml" value="0.3582427536231884" />
+        <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/fragment_best_cryptos.xml" value="0.286231884057971" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/fragment_cryptos.xml" value="0.5541666666666667" />
+        <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/fragment_exchanges.xml" value="0.5541666666666667" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/fragment_profile.xml" value="0.5541666666666667" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/fragment_settings.xml" value="0.5541666666666667" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/fragment_wallet.xml" value="0.5541666666666667" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/item_coin.xml" value="0.5541666666666667" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/item_crypto.xml" value="0.5541666666666667" />
+        <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/item_exchange.xml" value="0.432518115942029" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/layout/view_onboarding.xml" value="0.5541666666666667" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/menu/bottom_nav_menu.xml" value="0.31354166666666666" />
         <entry key="..\:/androidProject/crypto_project/app/src/main/res/menu/main_nav_menu.xml" value="0.31354166666666666" />

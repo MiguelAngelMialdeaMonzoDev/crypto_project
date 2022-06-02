@@ -12,10 +12,11 @@ class RegisterViewModel : ViewModel() {
     val password = MutableLiveData<String>()
     val passwordConfirmation = MutableLiveData<String>()
 
-    val emailError = MutableLiveData(0)
-    val userError = MutableLiveData(0)
-    val passwordError = MutableLiveData(0)
-    val passwordConfirmationError = MutableLiveData(0)
+    val emailError = MutableLiveData<Int>()
+    val userError = MutableLiveData<Int>()
+    val passwordError = MutableLiveData<Int>()
+    val passwordConfirmationError = MutableLiveData<Int>()
+    val fieldsCorrect = MutableLiveData(false)
 
     fun checkEmail() {
         when {
@@ -36,7 +37,7 @@ class RegisterViewModel : ViewModel() {
     fun checkPassword() {
         when {
             password.value.isNullOrEmpty() -> passwordError.value = R.string.empty_field
-            password.value.toString().isValidPassword() -> passwordError.value =
+            !password.value.toString().isValidPassword() -> passwordError.value =
                 R.string.password_error
             else -> passwordError.value = 0
         }
@@ -45,8 +46,12 @@ class RegisterViewModel : ViewModel() {
     fun checkPasswordConfirmation() {
         when {
             passwordConfirmation.value.isNullOrEmpty() -> passwordConfirmationError.value = R.string.empty_field
-            passwordConfirmation.value.equals(passwordConfirmation.value) -> passwordConfirmationError.value = R.string.register_password_confirmation_error
+            !passwordConfirmation.value.equals(password.value) -> passwordConfirmationError.value = R.string.register_password_confirmation_error
             else -> passwordConfirmationError.value = 0
         }
+    }
+
+    fun checkFieldsCorrect() {
+        fieldsCorrect.value = emailError.value == 0 && userError.value == 0 && passwordError.value == 0 && passwordConfirmationError.value == 0
     }
 }
